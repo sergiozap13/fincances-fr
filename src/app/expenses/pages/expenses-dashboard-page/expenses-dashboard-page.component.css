@@ -1,0 +1,42 @@
+
+/* Tabla de gastos */
+.expenses-table {
+  padding: 2%;
+  margin: 2%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tarjetas de previsión */
+.prevision-card {
+  border: 1px solid #ddd;
+  padding: 2%;
+  margin: 2%;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.prevision-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .d-flex {
+    flex-direction: column;
+  }
+
+  .col-6 {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .expenses-table, .prevision-table {
+    height: auto;
+  }
+}

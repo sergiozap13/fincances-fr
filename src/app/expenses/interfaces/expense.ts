@@ -1,9 +1,9 @@
 export interface Expense {
   id:        string;
-  cantidad:  number;
-  motivo:    string;
-  necesario: boolean;
+  amount:    number;
+  reason:    string;
+  necessary: boolean;
   category:  string;
-  fecha:     Date;
-  notas:     string;
+  date:      string;
+  notes?:    string;
 }

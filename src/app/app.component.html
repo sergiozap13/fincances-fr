@@ -1,12 +1,11 @@
 
-
 <div class="d-flex">
 
   <div class="border-right p-3" id="sidebar" [class.active]="isSidebarActive">
 
     <h3 class="text-center">FinancesApp</h3>
 
-    <button class="btn d-block d-md-none" id="sidebar-toggle" (click)="toggleSidebar()">
+    <button class="btn d-block d-md-none" id="sidebar-toggle-close" (click)="toggleSidebar()">
       <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M14 7l-5 5 5 5V7z"/><path d="M24 0v24H0V0h24z" fill="none"/></svg>
     </button>
 
@@ -18,7 +17,7 @@
       <h4 class="text-center mb-3">Access Menu</h4>
       <ul>
         <li
-          *ngFor="let tag of tags"
+          *ngFor="let tag of menuTags"
           class="list-group-item mt-2 list-group-item-action"
           (click)="toggleSidebar()"
           [routerLink]="tag.route"
@@ -29,7 +28,7 @@
     </div>
   </div>
 
-  <button class="btn btn-secondary d-block d-md-none" id="sidebar-toggle" (click)="toggleSidebar()">
+  <button class="btn btn-secondary d-block d-md-none" id="sidebar-toggle-open" (click)="toggleSidebar()">
     ☰
   </button>
 

@@ -27,11 +27,7 @@
 
 /* Responsividad */
 @media (max-width: 768px) {
-  .d-flex {
-    flex-direction: column;
-  }
-
-  .col-6 {
+  .prevision-table {
     width: 100%;
     margin-bottom: 1rem;
   }

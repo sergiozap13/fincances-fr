@@ -1,1 +1,93 @@
-<p>add-expenses-page works!</p>
+<div class="p-4" style="max-width: 600px; margin: 0 auto;">
+  <h4>Añadir gasto</h4>
+  <hr>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <form [formGroup]="expenseForm" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+      <label class="form-label">Motivo *</label>
+      <input
+        type="text"
+        class="form-control"
+        [class.is-invalid]="isInvalid('reason')"
+        formControlName="reason"
+        placeholder="Ej: Supermercado"
+      >
+      <div *ngIf="isInvalid('reason')" class="invalid-feedback">
+        El motivo es obligatorio (mínimo 3 caracteres).
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Cantidad (€) *</label>
+      <input
+        type="number"
+        class="form-control"
+        [class.is-invalid]="isInvalid('amount')"
+        formControlName="amount"
+        placeholder="0.00"
+        step="0.01"
+        min="0.01"
+      >
+      <div *ngIf="isInvalid('amount')" class="invalid-feedback">
+        Introduce una cantidad válida (mayor que 0).
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Categoría *</label>
+      <select
+        class="form-select"
+        [class.is-invalid]="isInvalid('category')"
+        formControlName="category"
+      >
+        <option value="">Selecciona una categoría</option>
+        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+      </select>
+      <div *ngIf="isInvalid('category')" class="invalid-feedback">
+        Selecciona una categoría.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Fecha *</label>
+      <input
+        type="date"
+        class="form-control"
+        [class.is-invalid]="isInvalid('date')"
+        formControlName="date"
+      >
+      <div *ngIf="isInvalid('date')" class="invalid-feedback">
+        La fecha es obligatoria.
+      </div>
+    </div>
+
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" formControlName="necessary" id="necessary">
+      <label class="form-check-label" for="necessary">¿Es un gasto necesario?</label>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Notas</label>
+      <textarea
+        class="form-control"
+        formControlName="notes"
+        rows="2"
+        placeholder="Opcional..."
+      ></textarea>
+    </div>
+
+    <div class="d-flex gap-2">
+      <button type="submit" class="btn btn-success" [disabled]="isSubmitting">
+        <span *ngIf="isSubmitting" class="spinner-border spinner-border-sm me-1"></span>
+        Guardar gasto
+      </button>
+      <button type="button" class="btn btn-outline-secondary" routerLink="/expenses/dashboard">
+        Cancelar
+      </button>
+    </div>
+
+  </form>
+</div>

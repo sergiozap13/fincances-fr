@@ -1,5 +1,4 @@
 
-
 <ng-template #noexpenses>
   <div class="d-flex justify-content-center">
     <b>Aun no tienes gastos este mes</b>
@@ -10,11 +9,19 @@
 
 <div class="col p-3">
 
-  <div class="d-flex p-2">
+  <div *ngIf="isLoading" class="d-flex justify-content-center p-4">
+    <div class="spinner-border text-success" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <div *ngIf="!isLoading" class="d-flex p-2">
     <div class="col-6 p-2 mr-5 expenses-table">
       <h4 class="text-center">Gastos en <b>{{actualMonth}}</b></h4>
 
-      <expenses-list *ngIf="expenses.length > 0 else noexpenses" [expenses]="expenses"></expenses-list>
+      <expenses-list *ngIf="expenses.length > 0; else noexpenses" [expenses]="expenses"></expenses-list>
       <hr>
 
       <p *ngIf="expenses.length > 0" class="text-center">Total: {{ totalMonthExpenses }}€</p>
@@ -31,13 +38,10 @@
         <h4>En meses anteriores</h4>
         <hr>
         <ul class="list-group">
-          <li class="list-group-item">Enero</li>
-          <li class="list-group-item">Febrero</li>
-          <li class="list-group-item">Marzo</li>
-          <li class="list-group-item">Abril</li>
+          <li *ngFor="let month of previousMonths" class="list-group-item">{{ month }}</li>
         </ul>
 
-        <a href="">Ver más</a>
+        <a routerLink="/expenses/month/all-expenses" class="btn btn-link mt-2">Ver más</a>
       </div>
     </div>
   </div>

@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-
+import { CommonModule, DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [
+    CommonModule,
+    DatePipe
+  ],
+  providers: [DatePipe]
 })
 export class SharedModule { }

@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost:8080/api'
+  // TODO: Replace with the actual production API endpoint before deploying
+  apiUrl: 'https://api.example.com/api'
 };

@@ -31,7 +31,7 @@ export class AddExpensesPageComponent {
       reason:    ['', [Validators.required, Validators.minLength(3)]],
       amount:    [null, [Validators.required, Validators.min(0.01)]],
       category:  ['', Validators.required],
-      date:      [new Date().toISOString().substring(0, 10), Validators.required],
+      date:      [new Date().toISOString().split('T')[0], Validators.required],
       necessary: [false],
       notes:     ['']
     });

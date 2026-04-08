@@ -1,33 +1,87 @@
 
+
+.dashboard-head {
+  padding: 0.75rem 0.75rem 0;
+}
+
+.subtitle {
+  color: #4f725f;
+  font-weight: 500;
+}
+
+.dashboard-grid {
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 20px 40px rgba(22, 83, 49, 0.08);
+}
+
 /* Tabla de gastos */
 .expenses-table {
   padding: 2%;
   margin: 2%;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #c9e4cf;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff 0%, #f4fbf5 100%);
+  box-shadow: 0 10px 30px rgba(24, 88, 48, 0.11);
 }
 
 /* Tarjetas de previsión */
 .prevision-card {
-  border: 1px solid #ddd;
+  border: 1px solid #c9e4cf;
   padding: 2%;
   margin: 2%;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff 0%, #f2fbf4 100%);
+  box-shadow: 0 10px 30px rgba(24, 88, 48, 0.11);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .prevision-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 24px rgba(21, 74, 42, 0.18);
+}
+
+.empty-state {
+  border: 1px dashed #9dc8a8;
+  border-radius: 10px;
+  padding: 1rem;
+  color: #3d664f;
+  background-color: #f6fcf7;
+}
+
+.total-pill {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background-color: #e4f7e7;
+  color: #155c34;
+  font-weight: 700;
+}
+
+.month-item {
+  border: 1px solid #d0e8d4;
+  margin-bottom: 0.4rem;
+  border-radius: 8px;
+  color: #1f5738;
+  background-color: #f6fff7;
+}
+
+.more-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #1e7a46;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.more-link:hover {
+  text-decoration: underline;
 }
 
 /* Responsividad */
 @media (max-width: 768px) {
-  .d-flex {
+  .dashboard-content {
     flex-direction: column;
   }
 
@@ -38,5 +92,9 @@
 
   .expenses-table, .prevision-table {
     height: auto;
+  }
+
+  .dashboard-head {
+    padding-top: 3rem;
   }
 }

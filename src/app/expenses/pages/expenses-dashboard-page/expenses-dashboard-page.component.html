@@ -1,23 +1,29 @@
 
 
 <ng-template #noexpenses>
-  <div class="d-flex justify-content-center">
+  <div class="empty-state d-flex justify-content-center">
     <b>Aun no tienes gastos este mes</b>
   </div>
 </ng-template>
 
-<button class="btn btn-secondary" routerLink="/expenses/add">Añadir gasto</button>
+<div class="dashboard-head d-flex justify-content-between align-items-center flex-wrap gap-3">
+  <div>
+    <h2 class="mb-1">Panel mensual</h2>
+    <p class="mb-0 subtitle">Resumen de tus movimientos en {{actualMonth}}</p>
+  </div>
+  <button class="btn btn-secondary" routerLink="/expenses/add">Añadir gasto</button>
+</div>
 
-<div class="col p-3">
+<div class="dashboard-grid p-3">
 
-  <div class="d-flex p-2">
+  <div class="d-flex p-2 dashboard-content">
     <div class="col-6 p-2 mr-5 expenses-table">
       <h4 class="text-center">Gastos en <b>{{actualMonth}}</b></h4>
 
       <expenses-list *ngIf="expenses.length > 0 else noexpenses" [expenses]="expenses"></expenses-list>
       <hr>
 
-      <p *ngIf="expenses.length > 0" class="text-center">Total: {{ totalMonthExpenses }}€</p>
+      <p *ngIf="expenses.length > 0" class="text-center total-pill">Total: {{ totalMonthExpenses }}€</p>
     </div>
 
     <div class="col-5 d-flex flex-column p-2 md:mr-5 prevision-table justify-content-center">
@@ -31,13 +37,13 @@
         <h4>En meses anteriores</h4>
         <hr>
         <ul class="list-group">
-          <li class="list-group-item">Enero</li>
-          <li class="list-group-item">Febrero</li>
-          <li class="list-group-item">Marzo</li>
-          <li class="list-group-item">Abril</li>
+          <li class="list-group-item month-item">Enero</li>
+          <li class="list-group-item month-item">Febrero</li>
+          <li class="list-group-item month-item">Marzo</li>
+          <li class="list-group-item month-item">Abril</li>
         </ul>
 
-        <a href="">Ver más</a>
+        <a class="more-link" href="">Ver más</a>
       </div>
     </div>
   </div>

@@ -5,10 +5,12 @@
   left: 0;
   top: 0;
   bottom: 0;
-  background-color: #deffda;
-  color: black;
+  background: linear-gradient(180deg, #e8f9ea 0%, #d7efd9 100%);
+  border-right: 1px solid #b9ddbf;
+  color: #123522;
   transition: transform 0.3s ease;
   z-index: 1;
+  box-shadow: 8px 0 24px rgba(24, 88, 48, 0.09);
 }
 
 #content {
@@ -17,23 +19,42 @@
   transition: margin-left 0.3s ease;
 }
 
-li {
-  border-radius: 10px;
-  border: 0;
+.brand-caption {
+  color: #46745a;
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 
-li:hover {
-  background-color: #9fd39a;
+.menu-links {
+  list-style: none;
+  padding-left: 0;
+}
+
+.menu-item {
+  border-radius: 10px;
+  border: 1px solid #c0dec4;
+  background-color: #f5fff7;
+  color: #17452c;
+  font-weight: 700;
+}
+
+.menu-item:hover {
+  background-color: #bde6c5;
   cursor: pointer;
+  transform: translateX(2px);
+}
+
+.sidebar-toggle-btn {
+  border-radius: 8px;
 }
 
 @media (max-width: 768px) {
   #sidebar {
-    transform: translateX(-100%); /* Oculta el sidebar por defecto */
+    transform: translateX(-100%);
   }
 
   #sidebar.active {
-    transform: translateX(0); /* Muestra el sidebar cuando tiene la clase "active" */
+    transform: translateX(0);
   }
 
   #content {
@@ -41,9 +62,10 @@ li:hover {
     width: 100%;
   }
 
-  #sidebar-toggle {
+  .sidebar-toggle-btn {
     position: fixed;
     top: 10px;
     left: 10px;
+    z-index: 2;
   }
 }

@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+	--green-50: #f3fbf4;
+	--green-100: #e1f5e3;
+	--green-200: #c4e9c7;
+	--green-300: #9ed8a4;
+	--green-500: #42a45a;
+	--green-700: #1d6a3e;
+	--green-900: #0f3f25;
+	--surface: #ffffff;
+	--text-main: #133521;
+	--text-soft: #527062;
+	--shadow-soft: 0 12px 30px rgba(22, 83, 49, 0.12);
+}
+
+html,
+body {
+	min-height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: 'Manrope', sans-serif;
+	color: var(--text-main);
+	background:
+		radial-gradient(circle at 5% 10%, rgba(66, 164, 90, 0.18), transparent 42%),
+		radial-gradient(circle at 85% 0%, rgba(29, 106, 62, 0.15), transparent 36%),
+		linear-gradient(145deg, #f5fff6 0%, #ecf8ef 55%, #e5f3e8 100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--green-900);
+	letter-spacing: -0.02em;
+}
+
+.btn-primary,
+.btn-secondary {
+	border: 0;
+	border-radius: 10px;
+	font-weight: 700;
+}
+
+.btn-secondary {
+	color: #f7fff9;
+	background: linear-gradient(135deg, #2f8a4f 0%, #21693e 100%);
+	box-shadow: 0 8px 20px rgba(19, 78, 44, 0.24);
+}
+
+.btn-secondary:hover {
+	background: linear-gradient(135deg, #277544 0%, #1a5632 100%);
+}
